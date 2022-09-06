@@ -22,6 +22,7 @@ jobs:
     - name: Build and push feed image
       uses: docker/build-push-action@v2
       with:
+        context: ./udagram-api-feed
         file: ./udagram-api-feed/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME}}/udagram-api-feed:v1
@@ -29,6 +30,7 @@ jobs:
     - name: Build and push User image
       uses: docker/build-push-action@v2
       with:
+        context: ./udagram-api-user
         file: ./udagram-api-user/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME}}/udagram-api-user:v1
@@ -36,6 +38,7 @@ jobs:
     - name: Build and push Frontend image
       uses: docker/build-push-action@v2
       with:
+        context: ./udagram-frontend
         file: ./udagram-frontend/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME}}/udagram-frontend:v1
@@ -43,6 +46,7 @@ jobs:
     - name: Build and push reverseproxy image
       uses: docker/build-push-action@v2
       with:
+        context: ./udagram-reverseproxy
         file: ./udagram-reverseproxy/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME}}/udagram-reverseproxy:v1
