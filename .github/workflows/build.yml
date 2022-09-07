@@ -41,7 +41,7 @@ jobs:
         context: ./udagram-frontend
         file: ./udagram-frontend/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME}}/udagram-frontend:v1
+        tags: ${{ secrets.DOCKER_HUB_USERNAME}}/udagram-frontend:v2
 
     - name: Build and push reverseproxy image
       uses: docker/build-push-action@v2
